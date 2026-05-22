@@ -76,7 +76,7 @@ def download_audio_locally(link):
         return None
 
 def get_transcript_from_local_file(file_path):
-    aai.settings.api_key = "2f4b4cac2a394517bd36d6fa867db61f"
+    aai.settings.api_key = os.environ.get("ASSEMBLYAI_API_KEY")
     transcriber = aai.Transcriber()
     try:
         # Uploading the real file directly avoids the HTML transcoding bug completely
@@ -91,7 +91,7 @@ def get_transcript_from_local_file(file_path):
         return None
 
 def generate_blog_content(transcription):
-    client = genai.Client(api_key="AIzaSyDhtpMM-QWu1DkzA85OZpxRUTjzbwHOSHo")
+    client = genai.Client(api_key=os.environ.get("GEMINI_API_KEY"))
     prompt = f"Based on the following transcript, write a short blog article. Use bullet points. Max 300 words. No fluff, straight to the point:\n\n{transcription}\n\nArticle:"
 
     try:
