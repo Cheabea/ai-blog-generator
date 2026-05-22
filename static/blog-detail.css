@@ -1,0 +1,92 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f3f4f6;
+    font-family: Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Top Header */
+.blog {
+    font-family: Georgia, serif;
+    font-weight: bold;
+    font-size: 65px;
+    background-color: #e7ecb2;
+    color: #222;
+    padding: 30px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 1.1;
+}
+
+/* Right Side Logout Button */
+.login {
+    font-family: Georgia, serif;
+    font-weight: bold;
+    font-size: 18px;
+    background-color: #ece56d;
+    color: #222;
+    padding: 14px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    border: none;
+}
+
+/* Main Heading */
+.details {
+    align-items: center;
+    font-family: Georgia, serif;
+    font-size: 40px;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    margin: 50px 0 30px 0;
+}
+
+/* White Content Box */
+.title-box {
+    background: white;
+    width: 550px;
+    padding: 45px;
+    margin: 40px auto;
+    border-radius: 18px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+/* Section Labels */
+.detail {
+    font-size: 22px;
+    font-weight: bold;
+    color: #111;
+    margin-bottom: 15px;
+    background: none;
+    padding: 0;
+    box-shadow: none;
+    border-radius: 0;
+}
+
+/* Input Style */
+.content {
+    width: 100%;
+    padding: 16px;
+    font-size: 18px;
+    border: 1px solid #c7c7c7;
+    border-radius: 8px;
+    box-sizing: border-box;
+    margin-bottom: 35px;
+    background: white;
+}
+
+/* Divider Line */
+hr {
+    border: none;
+    border-top: 1px solid #666;
+    margin: 30px 0;
+}
+
+/* Youtube Link */
+a {
+    font-size: 20px;
+    color: #5a2ca0;
+    text-decoration: underline;
+}

@@ -1,0 +1,66 @@
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Detail</title>
+    <link rel="stylesheet" href="{% static 'blog-detail.css' %}">
+</head>
+<body>
+       <!--navbar-->
+    <nav>
+    <div class="blog">
+        BLOG 
+        <br>
+        GENERATOR
+        <div >
+            <a href="#" class="login hover:underline">
+                logout
+            </a>
+        </div>
+    </div>
+</nav> 
+<!-- main content -->
+ <div>
+    <div>
+        <section>
+            <h2 class="details">
+                Blog Post Details
+            </h2>
+            <div class="title-box">
+                <h3 class="detail">
+                    Blog Post Title
+                </h3>
+                <p class="content">
+                    this is the content
+                </p>
+                <br>
+                <hr>
+                <h4 class="detail">
+                    Youtube Title
+                </h4>
+                <p class="content">
+                    this is the content
+                </p>
+                <h4 style="font-size: 25px;">
+                            Youtube Link
+</h4>
+<a href="https://www.youtube.com" target="_blank" class="text-blue-600 hover:underline text-[20px]">
+    www.youtube.com
+</a>
+            </div>
+        </section>
+    </div>
+ </div>
+   <footer style="font-style: italic;
+    text-align: center;
+    margin-top: 20px;
+    color: rgb(96, 94, 94);">
+    powered by <a href="https://www.youtube.com/watch?v=V56sTNPRT6A&list=RDwbinXagHqfc&index=17 " 
+    target ="_blank">
+        Ayush
+    </a>
+</footer>
+</body>
+</html>

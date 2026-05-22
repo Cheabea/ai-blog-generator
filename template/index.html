@@ -1,0 +1,288 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI BLOG GENERATOR</title>
+
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <style>
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .load {
+
+            width: 100px;
+            height: 100px;
+
+            margin: 40px auto;
+
+            border: solid 10px #8822aa;
+
+            border-radius: 50%;
+
+            border-right-color: transparent;
+            border-bottom-color: transparent;
+
+            animation: rotate 1s linear infinite;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav>
+
+        <div class="blog">
+
+            BLOG
+            <br>
+            GENERATOR
+
+            <div>
+
+                <a href="#" class="login hover:underline">
+                    Logout
+                </a>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+    <!-- MAIN CONTENT -->
+
+    <div class="content-box">
+
+        <div>
+
+            <!-- INTRODUCTION -->
+
+            <div class="introduction">
+
+                <h2>
+                    Welcome to the AI Blog Generator
+                </h2>
+
+                <p class="description">
+
+                    The AI Blog Generator converts YouTube videos
+                    into professional blog articles using AI.
+
+                    Simply paste a YouTube link and generate
+                    complete blog content instantly.
+
+                </p>
+
+            </div>
+
+
+            <!-- YOUTUBE INPUT SECTION -->
+
+            <div class="youtube-box">
+
+                <h2 style="color: rgb(96, 94, 94);">
+                    Enter YouTube Link
+                </h2>
+
+                <input
+                    type="text"
+                    id="youtubeLink"
+                    placeholder="Paste YouTube video link here"
+                    class="youtube-input"
+                >
+
+                <!-- LOADING CIRCLE -->
+
+                <div
+                    id="loading-circle"
+                    class="load"
+                    style="display: none;"
+                ></div>
+
+                <!-- BUTTON -->
+
+                <button
+                    class="generate-btn"
+                    id="generateBlogButton"
+                >
+                    Generate Blog
+                </button>
+
+            </div>
+
+
+            <!-- BLOG DISPLAY SECTION -->
+
+            <section class="blog-display-section">
+
+                <h2 class="blog-display-title">
+                    Generated Blog Article
+                </h2>
+
+                <div
+                    id="blogContent"
+                    class="blog-content-area"
+                >
+                </div>
+
+            </section>
+
+        </div>
+
+    </div>
+
+
+    <!-- FOOTER -->
+
+   <!-- FOOTER -->
+
+<footer
+    style="
+        font-style: italic;
+        text-align: center;
+        margin-top: 20px;
+        color: rgb(96, 94, 94);
+    "
+>
+    powered by
+    <a href="https://github.com/Cheabea" target="_blank">Ayush</a>
+</footer>
+
+    </footer>
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+        document
+            .getElementById('generateBlogButton')
+            .addEventListener('click', async () => {
+
+                const youtubeLink =
+                    document.getElementById('youtubeLink').value;
+
+                const blogContent =
+                    document.getElementById('blogContent');
+
+                const loadingCircle =
+                    document.getElementById('loading-circle');
+
+
+                // VALIDATION
+
+                if (!youtubeLink) {
+
+                    alert("Please enter a YouTube link.");
+
+                    return;
+                }
+
+
+                // SHOW LOADER
+
+                loadingCircle.style.display = 'block';
+
+                blogContent.innerHTML = "";
+
+
+                try {
+
+                    const response = await fetch(
+                        '/generate-blog/',
+                        {
+                            method: 'POST',
+
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+
+                            body: JSON.stringify({
+                                link: youtubeLink
+                            })
+                        }
+                    );
+
+
+                    const data = await response.json();
+
+                    console.log(data);
+
+
+                    // HIDE LOADER
+
+                    loadingCircle.style.display = 'none';
+
+
+                    // ERROR HANDLING
+
+                    if (data.error) {
+
+                        blogContent.innerHTML = `
+                            <p style="
+                                color: red;
+                                font-weight: bold;
+                                font-size: 20px;
+                            ">
+                                ${data.error}
+                            </p>
+                        `;
+
+                        return;
+                    }
+
+
+                    // DISPLAY BLOG — markdown parsed for clean formatting
+
+                    blogContent.innerHTML = `
+                        <h2 class="blog-generated-title">
+                            ${data.title}
+                        </h2>
+
+                        <div class="blog-generated-content">
+                            ${marked.parse(data.content)}
+                        </div>
+                    `;
+
+                }
+
+                catch (error) {
+
+                    console.error(error);
+
+                    loadingCircle.style.display = 'none';
+
+                    blogContent.innerHTML = `
+                        <p style="
+                            color: red;
+                            font-weight: bold;
+                        ">
+                            Something went wrong.
+                        </p>
+                    `;
+                }
+
+            });
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,165 @@
+.blog {
+    font-family: Roboto;
+    font-weight: bold;
+    font-size: 50px;
+    background-color: rgba(247, 253, 137, 0.519);
+    color: rgba(0, 0, 0, 0.754);
+
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.login {
+    font-family: Roboto;
+    font-weight: bold;
+    font-size: 20px;
+    background-color: rgba(247, 253, 137, 0.519);
+    color: rgba(0, 0, 0, 0.754);
+
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+.login:hover {
+    background-color: rgba(220, 230, 100, 0.7);
+}
+
+.introduction {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.description {
+    text-align: center;
+    color: rgba(0, 0, 0, 0.68);
+    font-size: 18px;
+    width: 70%;
+    margin: 20px auto;
+    line-height: 1.6;
+}
+.content-box {
+    width: 75%;
+    margin: 50px auto;     /* center the box */
+    background: white;     /* white box */
+    padding: 40px;
+    border-radius: 10px;   /* rounded corners */
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.2);
+}
+.youtube-box {
+    width: 70%;
+    margin: 50px auto;
+    background: white;
+    padding: 40px;
+   
+    text-align: center;
+}
+
+.youtube-input {
+    width: 80%;
+    padding: 15px;
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.generate-btn {
+    margin-top: 20px;
+    padding: 12px 25px;
+    background: rgb(230, 233, 101);
+    color: rgb(9, 9, 9);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.generate-btn:hover {
+    background: rgb(244, 242, 129);
+}
+/* YouTube Box Section Heading Replacement */
+.youtube-box-title {
+    color: rgb(96, 94, 94);
+}
+
+/* New Generated Blog Section Formatting */
+.blog-display-section {
+    margin-top: 40px;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: left;
+}
+
+.blog-display-title {
+    font-size: 1.3rem;
+    margin-bottom: 16px;
+    font-weight: 600;
+    color: #111827;
+}
+
+.blog-content-area {
+    margin-top: 8px;
+    color: #374151;
+    line-height: 1.7;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.blog-content-area p {
+    margin-top: 0;
+    margin-bottom: 16px;
+}
+
+/* Footer Section Formatting */
+.main-footer {
+    font-style: italic;
+    text-align: center;
+    margin-top: 20px;
+    color: rgb(96, 94, 94);
+}
+.blog-generated-title {
+    margin-bottom: 20px;
+    color: #8822aa;
+}
+
+.blog-generated-content {
+    line-height: 1.8;
+    font-size: 17px;
+    color: #374151;
+}
+
+.blog-generated-content h1,
+.blog-generated-content h2,
+.blog-generated-content h3 {
+    margin: 24px 0 12px 0;
+    color: #111827;
+    font-weight: 700;
+}
+
+.blog-generated-content p {
+    margin-bottom: 16px;
+}
+
+.blog-generated-content ul,
+.blog-generated-content ol {
+    padding-left: 24px;
+    margin-bottom: 16px;
+}
+
+.blog-generated-content li {
+    margin-bottom: 8px;
+}
+
+.blog-generated-content strong {
+    color: #8822aa;
+}
+
+.blog-generated-content hr {
+    border: none;
+    border-top: 1px solid #eee;
+    margin: 24px 0;
+}
